@@ -1,0 +1,18 @@
+header {
+    display: flex;
+    align-items: center;
+}
+.hleft {
+    display: inline-block;
+    text-align: center;
+    flex-grow: 1;
+}
+.hright {
+    display: inline-block;
+    text-align: center;
+    flex-grow: 2;
+}
+.hlinks {
+    display: flex;
+    justify-content: space-evenly;
+}
