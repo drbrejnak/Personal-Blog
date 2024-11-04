@@ -32,9 +32,6 @@ main {
     text-align: center;
     font-size: 20px;
 }
-.bio {
-
-}
 .img-main {
     display: flex;
     flex-grow: 1;
