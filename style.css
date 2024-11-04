@@ -50,4 +50,8 @@ main {
 .port-img {
     max-width: 250px;
     max-height: auto;
-    margin: 2em;
+}
+.placeholder {
+    max-width: 250px;
+    max-height: auto;
+}
