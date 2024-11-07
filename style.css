@@ -73,3 +73,7 @@ input, textarea {
     font-size: 1em;
     height: 100%;
 }
+
+.ty {
+    text-align: center;
+}
