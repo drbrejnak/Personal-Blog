@@ -1,1 +1,1 @@
-setTimeout(() =>{window.location.href = window.location.origin}, 5000)
+setTimeout(() =>{window.location.href = history.back()}, 5000)
