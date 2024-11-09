@@ -2,15 +2,72 @@
 * {
     font-family: "garamond", serif;
 }
-header {
+
+.index-body {
+    background-color: black;
+    transition: background-color 1s 4s ease;
+  }
+
+#hnav {
     display: flex;
     align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: top 0.5s ease-in-out;
+    z-index: 9999;
+    background-color: white;
 }
+
+#hnav.index-hnav{
+    background-color: black;
+    animation: bgc 1s 4s forwards;
+}
+
+@keyframes bgc {
+    0% {background-color:black;}
+    100%{background-color:white;}
+  }
+
+#hnav.hidden {
+  top: -100px;
+}
+
 .hleft {
     display: inline-block;
     text-align: center;
     flex-grow: 1;
+    margin: 0;
 }
+
+.hleft > h1, p {
+    margin: 0;
+}
+
+.name {
+    color:hsl(195, 100%, 59%)
+}
+
+#index-name {
+    animation: name 1s 4s forwards;
+}
+
+@keyframes name {
+    0% {color:black;}
+    100%{color:hsl(195, 100%, 59%)}
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+a:hover {
+    color: hsl(195, 100%, 59%);
+}
+
 .hright {
     display: inline-block;
     text-align: center;
@@ -24,9 +81,34 @@ header {
 
 main {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    position: relative;
 }
+
+.typewriter h2 {
+    text-align: center;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    cursor: default;
+    animation:
+      typing 3.5s steps(40, end),
+      white-black 0.5s step-end infinite;
+  }
+
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes white-black {
+    0% {color:white;}
+    100%{color:black}
+  }
+
 .text-main {
     display: inline-block;
     flex-grow: 2;
@@ -40,9 +122,17 @@ main {
 }
 .selfie {
     max-width: 250px;
-    max-height: auto;
     margin: 2em;
+    transition: opacity 2s linear 2s;
+    animation: fade-in 1s 4s forwards;
+    opacity: 0;
 }
+
+@keyframes fade-in {
+    0%{opacity: 0}
+    100%{opacity: 1;}
+}
+
 @media (max-width:768px) {
     main {
         flex-wrap: wrap;
